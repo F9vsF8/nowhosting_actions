@@ -8,24 +8,22 @@ on:
       mb_id:
         description: 'mb_id value'
         required: false
-        default: 'YOUR_DEFAULT_MB_ID'  # Replace with your actual default value
       mb_password:
         description: 'mb_password value'
         required: false
-        default: 'YOUR_DEFAULT_MB_PASSWORD'  # Replace with your actual default value
 
 jobs:
   send_request:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        
+
       - name: Send POST Request
         env:
-          MB_ID: ${{ github.event.inputs.mb_id }}
-          MB_PASSWORD: ${{ github.event.inputs.mb_password }}
+          MB_ID: ${{ secrets.MB_ID }}
+          MB_PASSWORD: ${{ secrets.MB_PASSWORD }}
         run: |
           curl -X POST \
             -H "Content-Type: application/x-www-form-urlencoded" \
