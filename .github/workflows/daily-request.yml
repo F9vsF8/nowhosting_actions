@@ -2,17 +2,17 @@ name: Daily Request
 
 on:
   schedule:
-    - cron: '30 0 * * *'  # 每天 0:30 触发
-  workflow_dispatch:  # 允许手动触发
+    - cron: '30 0 * * *'  # Run daily at 00:30
+  workflow_dispatch:  # Allow manual triggering
     inputs:
       mb_id:
         description: 'mb_id value'
-        required: false  # 不再需要手动输入，可以从 Secrets 中获取
-        default: ${{ secrets.MB_ID }}  # 默认值从 Repository Secrets 中获取
+        required: false
+        default: ${{ secrets.MB_ID }}  # Access the MB_ID secret
       mb_password:
         description: 'mb_password value'
-        required: false  # 不再需要手动输入，可以从 Secrets 中获取
-        default: ${{ secrets.MB_PASSWORD }}  # 默认值从 Repository Secrets 中获取
+        required: false
+        default: ${{ secrets.MB_PASSWORD }}  # Access the MB_PASSWORD secret
 
 jobs:
   send_request:
