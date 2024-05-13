@@ -8,11 +8,11 @@ on:
       mb_id:
         description: 'mb_id value'
         required: false
-        default: ${{ secrets: MB_ID }}  # Access the MB_ID secret
+        default: 'YOUR_DEFAULT_MB_ID'  # Replace with your actual default value
       mb_password:
         description: 'mb_password value'
         required: false
-        default: ${{ secrets: MB_PASSWORD }}  # Access the MB_PASSWORD secret
+        default: 'YOUR_DEFAULT_MB_PASSWORD'  # Replace with your actual default value
 
 jobs:
   send_request:
