@@ -2,17 +2,17 @@ name: Daily Request
 
 on:
   schedule:
-    - cron: '30 0 * * *'  # Run daily at 00:30
-  workflow_dispatch:  # Allow manual triggering
+    - cron: '30 0 * * *'  # 每天 00:30 运行
+  workflow_dispatch:  # 允许手动触发
     inputs:
       mb_id:
-        description: 'mb_id value'
+        description: 'mb_id 值'
         required: false
-        default: 'YOUR_DEFAULT_MB_ID'  # Replace with your actual default value
+        default: ''  # 删除默认值
       mb_password:
-        description: 'mb_password value'
+        description: 'mb_password 值'
         required: false
-        default: 'YOUR_DEFAULT_MB_PASSWORD'  # Replace with your actual default value
+        default: ''  # 删除默认值
 
 jobs:
   send_request:
