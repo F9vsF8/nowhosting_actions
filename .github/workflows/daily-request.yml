@@ -7,10 +7,12 @@ on:
     inputs:
       mb_id:
         description: 'mb_id value'
-        required: true
+        required: false
+        default: ${{ secrets.MB_ID }}
       mb_password:
         description: 'mb_password value'
-        required: true
+        required: false
+        default: ${{ secrets.MB_PASSWORD }}
 
 jobs:
   send_request:
